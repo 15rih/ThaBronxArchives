@@ -1,0 +1,8 @@
+game:GetService("RunService"):BindToRenderStep("Godmode", 0, function()
+   local ohNumber1 = -math.huge
+   game:GetService("ReplicatedStorage").DamagePlayer:InvokeServer(ohNumber1)
+   if LocalPlayer.Character.Humanoid:GetState() == Enum.HumanoidStateType.Physics then
+       LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(2)
+   end
+   LocalPlayer.PlayerGui.HealthGui.Frame.Frame.Visible = false
+end)
